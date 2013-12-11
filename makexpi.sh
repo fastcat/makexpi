@@ -239,7 +239,7 @@ zip -r -$xpi_compression_level ../${appname}${version_part}${suffix}_noupdate.xp
 
 
 # create lzh
-if [ -f ../readme.txt ]
+if [ -f ../readme.txt -a -n "$(which lha)" ]
 then
 	lha a ../$appname${version_part}.lzh ../${appname}${suffix}.xpi ../readme.txt
 fi
